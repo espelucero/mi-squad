@@ -1,22 +1,23 @@
 function MiembroSquad(nombreYApellido, edad, hobbies){
-	this.nombreYApellido = nombreYApellido,
-	this.edad = edad,
-	this.hobbies = hobbies,
-
+	this.nombreYApellido = nombreYApellido;
+	this.edad = edad;
+	this.hobbies = hobbies;
 }
 
-var fernanda = new MiembroSquad('Fernanda Zamora', 30,
+function miembros(){
+	var lista = [];
+
+	var fernanda = new MiembroSquad('Fernanda Zamora', 30,
 	['escuchar música','Hacer fotografías','Pensar en el existencialismo']);
 
-var valentina = new MiembroSquad('Valentina Miranda', 26,['dibujar','ver anime y series', 'cocinar']);
+	var valentina = new MiembroSquad('Valentina Miranda', 26,['dibujar','ver anime y series', 'cocinar']);
 
-var cindialy = new MiembroSquad('Cindialy Berrios', 23, ['Trekking', 'Escuchar música', 'Deporte']);
+	var cindialy = new MiembroSquad('Cindialy Berrios', 23, ['Trekking', 'Escuchar música', 'Deporte']);
 
-var diana = new MiembroSquad('Diana Villasmil', 29, ['cantar', 'ver series coreanas', 'leer']);
+	var diana = new MiembroSquad('Diana Villasmil', 29, ['cantar', 'ver series coreanas', 'leer']);
 
-var natalia = new MiembroSquad('Natalia Villalobos', 30, 'tocar batería');
+	var natalia = new MiembroSquad('Natalia Villalobos', 30, ['tocar batería', 'dormir', 'hacer queques']);
 
-var lista = [];
 
 lista.push(fernanda);
 lista.push(valentina);
@@ -25,8 +26,15 @@ lista.push(diana);
 lista.push(natalia);
 
 lista.forEach(function(el){
-	
-})
+	var contenedor = document.getElementById('listaIntegrantes');
+	contenedor.innerHTML += "<div><b>Nombre: </b>" + el.nombreYApellido + "<br><b>Edad: </b>" + el.edad +
+	" años <br>" + "<b>Hobbies: </b><ul><li>" + el.hobbies[0] + "</li><li>" + el.hobbies[1] + "</li><li>" +
+	el.hobbies[2] + "</li></ul></div><br>";
+});
+return lista;
+
+}
+miembros();
 
 
 
