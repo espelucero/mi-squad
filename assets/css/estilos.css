@@ -1,0 +1,7 @@
+@charset "UTF-8";
+/* CSS Document */
+
+*{ margin:3; padding:3;}
+body{ background-color:#FFFF;}
+
+.Comentario img{height:80%; width:03%; padding-top:2em;}
